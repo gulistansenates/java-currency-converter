@@ -7,10 +7,10 @@ This project uses **mock (fake)** exchange rate data in JSON format to simulate 
 
 ## 📌 Features
 
-- 🌍 Convert between 5 currencies: **USD, EUR, TRY, GBP, JPY**
-- 🧠 Built-in conversion logic using fake exchange rates (JSON)
-- 💻 GUI created using Java Swing
-- 🚫 No internet connection or real-time API required
+- Convert between 5 currencies: **USD, EUR, TRY, GBP, JPY**
+- Built-in conversion logic using fake exchange rates (JSON)
+- GUI created using Java Swing
+- No internet connection or real-time API required
 
 ---
 
