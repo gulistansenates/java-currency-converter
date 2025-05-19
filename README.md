@@ -3,8 +3,6 @@
 A simple desktop currency converter built with **Java Swing** and **org.json** library.  
 This project uses **mock (fake)** exchange rate data in JSON format to simulate currency conversion.
 
----
-
 ## 📌 Features
 
 - Convert between 5 currencies: **USD, EUR, TRY, GBP, JPY**
