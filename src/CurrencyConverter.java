@@ -25,7 +25,6 @@ public class CurrencyConverter extends JFrame {
     private JLabel resultLabel;
 
     public CurrencyConverter() {
-        // UI Teması ve renk ayarları
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {}
@@ -37,13 +36,11 @@ public class CurrencyConverter extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Üst başlık
         JLabel titleLabel = new JLabel("Currency Converter", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
         add(titleLabel, BorderLayout.NORTH);
 
-        // Ana panel
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBackground(new Color(245, 245, 245));
@@ -61,7 +58,6 @@ public class CurrencyConverter extends JFrame {
         panel.add(new LabeledPanel("To Currency:", toCurrency));
         panel.add(Box.createVerticalStrut(15));
 
-        // Buton
         JButton convertButton = new JButton("Convert");
         convertButton.setBackground(new Color(30, 144, 255));
         convertButton.setForeground(Color.WHITE);
@@ -75,7 +71,6 @@ public class CurrencyConverter extends JFrame {
         buttonPanel.add(convertButton);
         panel.add(buttonPanel);
 
-        // Sonuç etiketi
         resultLabel = new JLabel("Result: ", SwingConstants.CENTER);
         resultLabel.setFont(new Font("Segoe UI", Font.BOLD, 16));
         resultLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
