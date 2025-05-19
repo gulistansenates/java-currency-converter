@@ -22,8 +22,6 @@ This project uses **mock (fake)** exchange rate data in JSON format to simulate 
 
 <img src="images/sc1.png" alt="Ana Ekran" width="400"/>
 
-![Karakterler](images/sc1.png)
-
   ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
