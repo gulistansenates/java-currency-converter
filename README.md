@@ -12,8 +12,6 @@ This project uses **mock (fake)** exchange rate data in JSON format to simulate 
 - GUI created using Java Swing
 - No internet connection or real-time API required
 
----
-
 ## 🧪 Technologies Used
 
 - Java (JDK 17+ recommended)
@@ -21,6 +19,8 @@ This project uses **mock (fake)** exchange rate data in JSON format to simulate 
 - [org.json](https://github.com/stleary/JSON-java) (for JSON parsing)
 
 ## 🖼️ Screenshots
+
+<img src="images/sc1.png" alt="Ana Ekran" width="400"/>
 
 ![Karakterler](assets/screenshots/sc1.png)
 
