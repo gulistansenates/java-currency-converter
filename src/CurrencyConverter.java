@@ -25,31 +25,61 @@ public class CurrencyConverter extends JFrame {
     private JLabel resultLabel;
 
     public CurrencyConverter() {
-        setTitle("Currency Converter");
-        setSize(400, 250);
+        // UI Teması ve renk ayarları
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {}
+
+        getContentPane().setBackground(new Color(245, 245, 245));
+        setTitle("💱 Currency Converter");
+        setSize(420, 300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(6, 1, 10, 10));
+        setLayout(new BorderLayout(10, 10));
 
+        // Üst başlık
         JLabel titleLabel = new JLabel("Currency Converter", SwingConstants.CENTER);
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
-        add(titleLabel);
+        titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        add(titleLabel, BorderLayout.NORTH);
+
+        // Ana panel
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBackground(new Color(245, 245, 245));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 30, 10, 30));
+        add(panel, BorderLayout.CENTER);
 
         amountField = new JTextField();
-        add(new LabeledPanel("Amount:", amountField));
-
         fromCurrency = new JComboBox<>(fakeRates.keySet().toArray(new String[0]));
         toCurrency = new JComboBox<>(fakeRates.keySet().toArray(new String[0]));
-        add(new LabeledPanel("From:", fromCurrency));
-        add(new LabeledPanel("To:", toCurrency));
 
+        panel.add(new LabeledPanel("Amount:", amountField));
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(new LabeledPanel("From Currency:", fromCurrency));
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(new LabeledPanel("To Currency:", toCurrency));
+        panel.add(Box.createVerticalStrut(15));
+
+        // Buton
         JButton convertButton = new JButton("Convert");
+        convertButton.setBackground(new Color(30, 144, 255));
+        convertButton.setForeground(Color.WHITE);
+        convertButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        convertButton.setFocusPainted(false);
+        convertButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         convertButton.addActionListener(new ConvertAction());
-        add(convertButton);
 
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(new Color(245, 245, 245));
+        buttonPanel.add(convertButton);
+        panel.add(buttonPanel);
+
+        // Sonuç etiketi
         resultLabel = new JLabel("Result: ", SwingConstants.CENTER);
-        resultLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        add(resultLabel);
+        resultLabel.setFont(new Font("Segoe UI", Font.BOLD, 16));
+        resultLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        add(resultLabel, BorderLayout.SOUTH);
 
         setVisible(true);
     }
@@ -77,9 +107,11 @@ public class CurrencyConverter extends JFrame {
     private static class LabeledPanel extends JPanel {
         public LabeledPanel(String label, JComponent component) {
             setLayout(new BorderLayout(5, 5));
-            add(new JLabel(label), BorderLayout.WEST);
+            setBackground(new Color(245, 245, 245));
+            JLabel jLabel = new JLabel(label);
+            jLabel.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+            add(jLabel, BorderLayout.WEST);
             add(component, BorderLayout.CENTER);
-            setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
         }
     }
 
